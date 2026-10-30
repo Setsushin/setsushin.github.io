@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setsushin</title>
+<meta name="description" content="Data engineer in Japan. Projects: QQQuant and a personal dashboard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f5f3f0;
+  --fg: #1f1b17;
+  --fg-muted: #5a534b;
+  --fg-faded: #71695f;
+  --border: rgba(40, 30, 20, 0.12);
+  --accent: #1f4e79;
+  --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #191714;
+    --fg: #ece8e3;
+    --fg-muted: #aaa39a;
+    --fg-faded: #8f877e;
+    --border: rgba(255, 240, 220, 0.10);
+    --accent: color-mix(in srgb, #1f4e79 60%, white);
+  }
+}
+* { box-sizing: border-box; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 16px/1.55 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 72px 24px 56px;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+header { margin-bottom: 56px; }
+h1 { font-size: 34px; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; }
+header p { margin-top: 8px; color: var(--fg-muted); }
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.75fr);
+  gap: 40px;
+  align-items: start;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+}
+h2 { font-size: 21px; font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; }
+.project p { margin-top: 10px; color: var(--fg-muted); }
+.project p.stack { color: var(--fg-faded); font: 400 12.5px/1.6 var(--mono); }
+.links { display: flex; gap: 18px; margin-top: 16px; font-weight: 500; }
+.shot { display: block; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.shot img { display: block; width: 100%; height: auto; }
+@media (max-width: 760px) {
+  main { padding: 48px 16px 40px; }
+  header { margin-bottom: 40px; }
+  .project { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 32px 0; }
+}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Setsushin</h1>
+    <p>Data engineer in Japan. <a href="https://github.com/Setsushin">GitHub</a></p>
+  </header>
+
+  <section class="project" aria-labelledby="qqquant">
+    <div>
+      <h2 id="qqquant">QQQuant</h2>
+      <p>Leveraged-ETF strategy backtesting for a Japan-domiciled investor. It tests whether tilting monthly contributions into QLD and TQQQ during deep QQQ drawdowns beats plain QQQ DCA after Japanese tax.</p>
+      <p class="stack">Python · dbt · DuckDB · FastAPI · React</p>
+      <p class="stack">The demo is a static snapshot.</p>
+      <div class="links">
+        <a href="https://setsushin.github.io/QQQuant/">Live demo</a>
+        <a href="https://github.com/Setsushin/QQQuant">Source</a>
+      </div>
+    </div>
+    <a class="shot" href="https://setsushin.github.io/QQQuant/" tabindex="-1" aria-hidden="true">
+      <img src="qqquant.webp" width="1800" height="1125" alt="">
+    </a>
+  </section>
+
+  <section class="project" aria-labelledby="dashboard">
+    <div>
+      <h2 id="dashboard">Personal dashboard</h2>
+      <p>A personal start page. Calendar, tasks, markets, portfolio, feeds and a journal sit in one place.</p>
+      <p class="stack">React · TypeScript · Cloudflare Pages · D1</p>
+      <p class="stack">The demo uses dummy data and stays in your browser.</p>
+      <div class="links">
+        <a href="https://mydash-demo.setsushin.top">Live demo</a>
+        <a href="https://github.com/Setsushin/setsushin-dashboard">Source</a>
+      </div>
+    </div>
+    <a class="shot" href="https://mydash-demo.setsushin.top" tabindex="-1" aria-hidden="true">
+      <img src="dashboard.webp" width="1800" height="1125" alt="">
+    </a>
+  </section>
+</main>
+</body>
+</html>
